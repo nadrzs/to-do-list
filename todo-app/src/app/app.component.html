@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>To Do List</h1>
+ 
+  <p class=".subtitle">Create A List</p>
+  <form class="addbox">
+     <input type="text" [(ngModel)]="todo" name="todo" placeholder="Enter new task" />
+     <button (click)="handleClickAdd()" type="submit" class="addbtn">Create</button>
+  </form>
+
+  <ul>
+     <li *ngFor="let todo of todos">
+       <input type="checkbox" [checked]="todo.completed" (change)="updateTodo(todo.id)" />
+       {{ todo.description }}
+       <button (click)="deleteTodo(todo.id)">Delete</button>
+     </li>
+  </ul>
+ </div>
